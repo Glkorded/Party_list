@@ -1,0 +1,11 @@
+body {
+    height: 1080px;
+    background: linear-gradient(#c8e6d4, #bddde5);
+}
+.btn {
+    margin-left: 10px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
