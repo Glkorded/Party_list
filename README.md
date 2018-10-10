@@ -8,4 +8,4 @@ You can test it on: https://test-party-list.herokuapp.com/
 Have fun!
 
 
-Soom, I'll add filters to divide those, who are alonies and those who are  coming with guests. And of course - button, to <s>conquer</s> them all
+Soom, I'll add filters to divide those, who are alonies and those who are  coming with guests. And of course - button, to <s>conquer</s> gather them all
