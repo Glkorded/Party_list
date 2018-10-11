@@ -2,22 +2,23 @@ import React from 'react'
 import ExtraInfo from './ExtraInfo'
 import uuidv4 from 'uuid/v4'; //Сторонняя библиотека, чтобы генерировать уникалльный айди
 import EditableName from "./EditableName";
-import Filters from "./Filters";
+import Filters from "./Filters"; //затычка для будущих филтьров
 
-//Конструктор гостя
+//Guest Constructor
 class GuestList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             list: [],
-            filt_list: [],
             guest: '',        //Имя
             twoguests: false, //Один ли гость или с парой
             key: uuidv4(),    //Уникальный айди
             count: 0,         //СЧетчик сколько всего гостей
         };
     };
- /*Создание нового гостя путем добавления объекта в список*/
+
+
+    //Creating new guest by adding them to a list
     createNewGuest = () => {
         this.setState(({list, guest, twoguests, key, count,}) => ({
             list: [
@@ -35,13 +36,13 @@ class GuestList extends React.Component {
         }));
     };
 
+    //Functions of input control
     handleInput = e => {
         this.setState({
             guest: e.target.value
         });
         console.log(e.target.value)
     };
-
 
     handleKeyPress = (e) => {
         if (e.target.value !== '') {
@@ -51,12 +52,13 @@ class GuestList extends React.Component {
         }
     };
 
+    //Handle whether guest is alone or no
     handleCheckBox = () =>
         this.setState({
             twoguests: !this.state.twoguests
         });
 
-    /*Удаление гостя*/
+    //Delete the Guest
     excludeGuest = keyToDelete => {
         this.setState(({ list }) => ({
             list: list.filter((GuestList, key) => key !== keyToDelete),
@@ -64,6 +66,12 @@ class GuestList extends React.Component {
         }));
     };
 
+    //Filters functions
+    noFilter
+    onlySingle
+    onlyPair
+
+    //Local Storage Control
     componentWillMount() {
     localStorage.getItem('list') && this.setState({
         list: JSON.parse(localStorage.getItem('list'))
@@ -117,6 +125,9 @@ class GuestList extends React.Component {
                 </div>
                 {/*TODO недоделанные фильтры*/}
                 <Filters
+                    noFilter = {this.noFilter}
+                    onlySingle = {this.onlySingle}
+                    onlyPair = {this.onlyPair}
                 />
             </div>
         )
