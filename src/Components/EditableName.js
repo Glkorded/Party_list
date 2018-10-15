@@ -29,7 +29,7 @@ class EditableName extends Component {
     render() {
         return (
             <div>
-                {!this.state.editing ?
+                {this.state.editing ?
                 <div
                     className='single_guest_name'
                     onDoubleClick={this.startEdit}>
