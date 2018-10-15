@@ -67,9 +67,9 @@ class GuestList extends React.Component {
     };
 
     //Filters functions
-    noFilter
-    onlySingle
-    onlyPair
+    noFilter = () => {}
+    onlySingle = () => {}
+    onlyPair = () => {}
 
     //Local Storage Control
     componentWillMount() {
@@ -133,4 +133,5 @@ class GuestList extends React.Component {
         )
     }
 }
+
 export default GuestList

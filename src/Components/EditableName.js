@@ -4,7 +4,7 @@ class EditableName extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            editing:false,
+            editing:true,
             name:'',
         }
     }
